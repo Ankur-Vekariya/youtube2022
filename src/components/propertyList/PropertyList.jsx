@@ -1,6 +1,11 @@
+import useFetch from "../../hooks/useFetch";
 import "./propertyList.css";
 
 const PropertyList = () => {
+  const { data, loading, error } = useFetch(
+    "http://192.168.1.27:8800/api/hotels/countByType"
+  );
+  console.log("property type data=======", data);
   return (
     <div className="pList">
       <div className="pListItem">
